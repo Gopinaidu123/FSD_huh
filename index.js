@@ -27,13 +27,15 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.get("/users", (req, res) => {
-    res.send("Hello from Express server");
+    res.send("Hello due");
 });
 
  app.post("/data", (req, res) => {
     console.log(req.body);
     res.send("Data received");
 });
+
+ 
 
 app.listen(7007, () => {
     console.log("Express server running at port 7007");
