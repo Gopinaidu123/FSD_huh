@@ -36,8 +36,14 @@ app.get("/users", (req, res) => {
     res.send("Data is received");
 });
 
+      
+
 app.put("/update", ( req,res) =>{
     res.send("Data is updated");    
+});
+
+app.delete ("/delete", (req,res) => {
+    res.send("Data is deleted");
 });
  
 
