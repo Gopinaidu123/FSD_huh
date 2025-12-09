@@ -35,7 +35,9 @@ app.get("/users", (req, res) => {
     console.log(req.body);
     res.send("Data is received");
 });
-
+app.put("/update", ( req,res) =>{
+    res.send("Data is updated");    
+});
  
 
 app.listen(7007, () => {
