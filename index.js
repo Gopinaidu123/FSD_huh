@@ -17,6 +17,8 @@
 
 import express from 'express';
 const app = express();
+import studentRouter from './controller/Routers/stuudentsRouters.js';
+
 
 app.use(express.json());
 
