@@ -17,8 +17,8 @@
 const getStudents= (req,res) =>{
     let stdData= 
     {
-        "name" : "Tarun",
-        "Roll" :"1234"
+        "name" : "sobha",
+        "Roll" :"4235"
     };
     res.status(200).json({data : stdData});
 };
