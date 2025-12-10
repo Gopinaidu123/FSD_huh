@@ -45,6 +45,7 @@ app.put("/update", ( req,res) =>{
 app.delete ("/delete", (req,res) => {
     res.send("Data is deleted");
 });
+
  
 
 app.listen(7007, () => {
