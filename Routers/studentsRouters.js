@@ -11,4 +11,4 @@ import { getStudents,addstudents } from '../controller/studentsController.js';
 const router = express.Router();
 router.get('/get-student' ,getStudents);
 router.post('/add-student' ,addstudents);
-export default router;
+export default router;  
