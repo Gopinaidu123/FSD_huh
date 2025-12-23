@@ -1,52 +1,22 @@
-// import http from 'http';
-// import { json } from 'stream/consumers';
-// const server =http.createServer((req,res) => {
-//     console.log(req.method);
-//     if(req.url=="/user") {
-//         res.writeHead(200,{"content-Type" : "application/json"});
-//         res.end(JSON.stringify({name:"thub"}))
-//     } else{
-//         res.writeHead(200,{"content-Type" : "text/plain"});
-//         res.end("Hello this is from Backend aha")
-//     }
-
-// });
-// server.listen(7007 , () =>{
-//     console.log(`server running at port ${7007}`)
-// });
 
 import express from 'express';
-import studentsRouter from './Routers/studentsRouters.js';
+import cors from 'cors';
+import mongoose, { mongo } from 'mongoose';
+import studentRouter from './routers/studentsRouters.js';
 
 const app = express();
- 
-
-
 app.use(express.json());
+app.use(cors());
 
-app.use('/' , studentsRouter);
+mongoose.connect("mongodb://localhost:27017/").then(() => console.log("db connected"))
+.catch((error) => console.log(error));
 
-app.get("/users", (req, res) => {
-    res.send("Hello dude");
-});
-
- app.post("/data", (req, res) => {
-    console.log(req.body);
-    res.send("Data is received");
-});
-
-      
-
-app.put("/update", ( req,res) =>{
-    res.send("Data is updated");    
-});
-
-app.delete ("/delete", (req,res) => {
-    res.send("Data is deleted");
-});
-
- 
+app.use('/', studentRouter);
+app.get('/users', (req, res) => {
+    console.log("hello this is");
+    res.send("hello this is from backend");
+})
 
 app.listen(7007, () => {
-    console.log("Express server running at port 7007");
+    console.log("server running at port 7007")
 });

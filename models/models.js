@@ -1,15 +1,15 @@
-import mongoose from "mongoose";
 
-const studentSchema = new mongoose.Schema({
-    stdName: {
+import mongoose from "mongoose";
+const addStud = new mongoose.Schema( {
+     thubname: {
         type: String
     },
-    stdRoll : {
+    thubName : {
         type: String
     },
-    stdPhone: {
+    thubphone: {
         type : Number
     }
 });
-const student = mongoose.model("student", studentSchema);
-export default student;
+const student = mongoose.model("Student",studentSchema)
+export  default student;
